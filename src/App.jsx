@@ -13,12 +13,12 @@ export default function App() {
   const routes = createBrowserRouter([
     {path: '/', element: <SiteLayout />, children: [
       {index: true, element: <HomePage />},
-      {path: 'about', element: <AboutPage />},
-      {path: 'gallery', element: <GalleryPage />, children: [
+      {path: '/about', element: <AboutPage />},
+      {path: '/gallery', element: <GalleryPage />, children: [
         {path: ':paint', element: <ArtworkPage />}
       ]},
-      {path: 'press', element: <PressPage />},
-      {path: 'contact', element: <ContactPage />},
+      {path: '/press', element: <PressPage />},
+      {path: '/contact', element: <ContactPage />},
       {path: '*', element: <NotFoundPage />},
 
     ]}
