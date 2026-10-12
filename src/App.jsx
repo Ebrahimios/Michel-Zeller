@@ -1,4 +1,4 @@
-import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import {createHashRouter, RouterProvider} from 'react-router-dom'
 import SiteLayout from './components/Layout/SiteLayout.jsx'
 import AboutPage from './components/Pages/AboutPage.jsx'
 import ArtworkPage from './components/Pages/ArtworkPage.jsx'
@@ -10,22 +10,22 @@ import PressPage from './components/Pages/PressPage.jsx'
 import './gallery.css'
 
 export default function App() {
-  const routes = createBrowserRouter([
+  const routes = createHashRouter([
     {path: '/', element: <SiteLayout />, children: [
       {index: true, element: <HomePage />},
-      {path: '/about', element: <AboutPage />},
-      {path: '/gallery', element: <GalleryPage />, children: [
+      {path: 'about', element: <AboutPage />},
+      {path: 'gallery', element: <GalleryPage />, children: [
         {path: ':paint', element: <ArtworkPage />}
       ]},
-      {path: '/press', element: <PressPage />},
-      {path: '/contact', element: <ContactPage />},
+      {path: 'press', element: <PressPage />},
+      {path: 'contact', element: <ContactPage />},
       {path: '*', element: <NotFoundPage />},
-
     ]}
-  ])
-  return (
+]);
+
+return (
     <>
-    <RouterProvider router={routes}/>
+      <RouterProvider router={routes}/>
     </>
-  )
+)
 }
