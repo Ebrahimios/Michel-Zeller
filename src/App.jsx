@@ -14,7 +14,8 @@ export default function App() {
     {path: '/', element: <SiteLayout />, children: [
       {index: true, element: <HomePage />},
       {path: 'about', element: <AboutPage />},
-      {path: 'gallery', element: <GalleryPage />, children: [
+      {path: 'gallery', children: [
+        {index: true, element: <GalleryPage />}, 
         {path: ':paint', element: <ArtworkPage />}
       ]},
       {path: 'press', element: <PressPage />},

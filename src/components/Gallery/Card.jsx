@@ -8,7 +8,7 @@ export default function Card({ artwork }) {
 
   return (
     <article className="artwork-card h-100">
-      <Link to={`/buy/${artwork.id}`} className="artwork-link">
+      <Link to={`/gallery/${artwork.id}`} className="artwork-link">
         <div className="artwork-image-wrap">
           <img className="artwork-image" src={artwork.image} alt={artwork.title} onError={handleImageError} />
           <span className="artwork-open" aria-hidden="true">View artwork ↗</span>
